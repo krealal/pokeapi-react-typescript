@@ -30,7 +30,6 @@ function App() {
         <a className="menuOption">My team</a>
         <a className="menuOption">Filter</a>
       </div>
-      <PokeCard />
     </Main>
   );
 }

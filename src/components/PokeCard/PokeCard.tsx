@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { pokeCard } from "../../types/pokeCard";
 
 const Card = styled.div`
   background-color: white;
@@ -12,7 +13,6 @@ const Card = styled.div`
   }
   .cardBody {
     height: 187px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,33 +61,37 @@ const Card = styled.div`
   }
 `;
 
-const PokeCard = (): JSX.Element => {
+const PokeCard = ({
+  name,
+  number,
+  hp,
+  attackNumber,
+  specialAttackNumber,
+  defenseNumber,
+  image,
+}: pokeCard): JSX.Element => {
   return (
     <Card>
       <div className="cardHeader"></div>
       <div className="cardBody">
-        <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/87.svg"
-          alt="un pokemion"
-          className="pokeImage"
-        />
+        <img src={image} alt="un pokemion" className="pokeImage" />
         <h1 className="pokeName">
-          hola <span className="pokeNumber">buenas</span>
+          {name} <span className="pokeNumber">{number}</span>
         </h1>
-        <p className="pokeHp">que tal</p>
+        <p className="pokeHp">{hp}</p>
       </div>
       <div className="cardFooter">
         <div className="footerDiv">
-          <h2 className="statNumber">70k</h2>
+          <h2 className="statNumber">{attackNumber}</h2>
           <p className="statTittle">ATTACK</p>
         </div>
         <div className="footerDiv">
-          <h2 className="statNumber">70k</h2>
-          <p className="statTittle">ATTACK</p>
+          <h2 className="statNumber">{specialAttackNumber}</h2>
+          <p className="statTittle">SPECIAL ATTACK</p>
         </div>
         <div className="footerDiv">
-          <h2 className="statNumber">70k</h2>
-          <p className="statTittle">ATTACK</p>
+          <h2 className="statNumber">{defenseNumber}</h2>
+          <p className="statTittle">DEFENSE</p>
         </div>
       </div>
     </Card>
