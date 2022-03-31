@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { pokeCard } from "../../types/pokeCard";
+import { Pokemon } from "../../types/Pokemon";
 
 const Card = styled.div`
   background-color: white;
@@ -69,7 +69,7 @@ const PokeCard = ({
   specialAttackNumber,
   defenseNumber,
   image,
-}: pokeCard): JSX.Element => {
+}: Pokemon): JSX.Element => {
   return (
     <Card>
       <div className="cardHeader"></div>
